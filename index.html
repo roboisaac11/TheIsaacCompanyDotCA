@@ -103,6 +103,23 @@
             margin-bottom: 10px;
         }
     </style>
+    <script type="text/javascript">
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+        console.log(isMobile);
+
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+             console.log(isTablet)
+
+        if(isMobile) {
+            window.location = "/sad.html"
+        }else if(isTablet){
+            console.log("Tablet")
+        }
+   
+
+    </script>
 </head>
 
 <body>
@@ -280,7 +297,9 @@
                     </p>
                 </div>
                 <br>
-                <pre>Hey</pre>
+                <center><pre><small>Hey, you want some secret passwords? Send 5 Isaac Coin to 635d90e9e26b58473a686478, and send me an email with your Isaac Coin address. I will then send you the passwords.</small></pre></center>
+                <br>
+                <br>
             </div>
         </div>
         <div class="footer">
