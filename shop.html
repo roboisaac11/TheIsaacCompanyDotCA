@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Isaac Shop</title>
+    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="96x96">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("./img/bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: monospace;
+            color: white;
+        }
+
+        .title {
+            color: white;
+            font-size: 75px;
+            text-align: center;
+            margin: 0px;
+        }
+
+        .stitle {
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin: 0px;
+            margin-top: 100px;
+        }
+
+        h3 {
+            font-size: 25px;
+            color: white;
+        }
+
+        .footer {
+            height: 100px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin-top: 50px;
+            font-size: 15px;
+        }
+
+        .footer span {
+            margin-right: 50px;
+        }
+
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .navbar {
+            text-align: center;
+        }
+
+        .side-box {
+            float: left;
+            width: 37%;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: black;
+            background-color: rgb(202, 202, 202);
+            height: 500px;
+            margin-left: 100px;
+        }
+
+        .infotext {
+            margin-top: 60px;
+            color: black;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 7px;
+            border-color: aqua;
+            margin-left: 50px;
+        }
+        .desc {
+            float: right;
+            width: 50%;
+            overflow-wrap: normal;
+        }
+        .desc p {
+            margin-right: 65px;
+            font-size: large;
+        }
+        .stuff {
+            float: left;
+            width: 50%;
+            overflow-wrap: normal;
+        }
+        .stuff p {
+            margin-left: 65px;
+            font-size: large;
+        }
+        .price {
+            background-color: rgb(0, 104, 104);
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 50px;
+        }
+        .price b{
+            margin-left: 35%;
+
+            font-size: large;
+        }
+    </style>
+    <script type="text/javascript">
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+        console.log(isMobile);
+
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+        console.log(isTablet)
+
+        if (isMobile) {
+            window.location = "/sad.html"
+        } else if (isTablet) {
+            console.log("Tablet")
+        }
+
+
+    </script>
+</head>
+<body>
+    <div style="width: 100%; height: 100%; overflow-y: scroll; overflow-x: hidden;">
+        <div class="navbar" style="height: 100px; background-color: rgb(0, 23, 29);">
+            <br>
+            <br>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="http://theisaaccompany.ca"><img src="./img/company.jpg" width="50px"
+                        height="50px" /></a><span class="tooltiptext">The Isaac Company</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="mailto:isaac@theisaaccompany.ca"><img src="./img/email.jpg" width="50px"
+                        height="50px" /></a><span class="tooltiptext">Email me!</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="http://news.theisaaccompany.ca"><img src="./img/news.jpg" width="50px"
+                        height="50px" /></a><span class="tooltiptext">News!</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="http://arithmeclick.theisaaccompany.ca"><img src="./img/arithmeclick.jpg"
+                        width="50px" height="50px" /></a><span class="tooltiptext">Arithmeclick</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="https://isaacssite.azurewebsites.net/"><img src="./img/veryold.jpg"
+                        width="50px" height="50px" /></a><span class="tooltiptext">Very old site</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="https://happy-river-0f50bc90f.1.azurestaticapps.net/"><img src="./img/old.jpg"
+                        width="50px" height="50px" /></a><span class="tooltiptext">Not very old site</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+            <div class="tooltip"><a href="https://liluo.io/instant-builds/6f7c0965-0963-457e-8a5e-17caf33b8827"><img
+                        src="./img/sam.jpg" width="50px" height="50px" /></a><span class="tooltiptext">Sam
+                    Invaters</span></div>
+            <div class="tooltip"><img src="./img/cool.jpg" width="50px" height="50px" /><span class="tooltiptext">Isaac
+                    is cool</span></div>
+        </div>
+        <hr>
+        <h1 class="title" style="margin-top: 100px;"><img src="./img/isaacCompany_logo.png" alt="Picture of Isaac"
+            width="100" height="50" />The
+        Isaac Shop <br> <small><small><small><small><small>The best shop of all
+                            time</small></small></small></small></small></h1>
+        <div style=" background-color: rgb(32, 32, 32); margin-top: 200px; height: 1000px;">
+            <br>
+            <div class="item" style="width: 750px; height: 300px;">
+                <center><h1>Password Pack</h1></center>
+                <hr>
+                <div class="desc">
+                <p>You know how on the main page, there is a little box at the bottom where you can enter a password? You <i>could</i> try every possible option untill you stumble upon a password,
+                but it would be much more faster to have the passwords. So with this pack, you can buy 5 one-time passwords to try out! Access cool information, get rewards and much more!</p>
+                </div>
+                <div class="stuff">
+                    <div class="price"><b>$1</b></div>
+                    <p>
+                    Format: Digital<br>
+                    Download Type: <b>.txt</b>
+                    </p>
+                </div>
+            </div>
+        </div>  
+    
+    </div>
+</body>
+</html>
