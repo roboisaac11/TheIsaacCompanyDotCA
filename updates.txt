@@ -1,3 +1,1 @@
-
-    1: Online Isaac Coin CLI and website coming soon!
-    2: I have started working cool platformer game! Expect it to be done in a long time.
+    1. nothing
