@@ -1048,7 +1048,7 @@ gdjs._498Code.eventsList13(runtimeScene);} //End of subevents
 }
 
 
-};gdjs._498Code.asyncCallback11427364 = function (runtimeScene, asyncObjectsList) {
+};gdjs._498Code.asyncCallback13236628 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._498Code.eventsList15 = function(runtimeScene) {
@@ -1059,14 +1059,14 @@ gdjs._498Code.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback11427364(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback13236628(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs._498Code.asyncCallback9605044 = function (runtimeScene, asyncObjectsList) {
+};gdjs._498Code.asyncCallback13238676 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._498Code.eventsList16 = function(runtimeScene) {
@@ -1077,14 +1077,14 @@ gdjs._498Code.eventsList16 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback9605044(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback13238676(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs._498Code.asyncCallback13317540 = function (runtimeScene, asyncObjectsList) {
+};gdjs._498Code.asyncCallback13241260 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._498Code.eventsList17 = function(runtimeScene) {
@@ -1095,7 +1095,7 @@ gdjs._498Code.eventsList17 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback13317540(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._498Code.asyncCallback13241260(runtimeScene, asyncObjectsList)));
 }
 }
 

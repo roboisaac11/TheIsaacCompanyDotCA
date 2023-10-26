@@ -1017,7 +1017,7 @@ gdjs.copyArray(runtimeScene.getObjects("text"), gdjs._55Code.GDtextObjects1);
 }
 
 
-};gdjs._55Code.asyncCallback13623436 = function (runtimeScene, asyncObjectsList) {
+};gdjs._55Code.asyncCallback13395100 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._55Code.eventsList14 = function(runtimeScene) {
@@ -1028,14 +1028,14 @@ gdjs._55Code.eventsList14 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._55Code.asyncCallback13623436(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._55Code.asyncCallback13395100(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs._55Code.asyncCallback13625068 = function (runtimeScene, asyncObjectsList) {
+};gdjs._55Code.asyncCallback13396508 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._55Code.eventsList15 = function(runtimeScene) {
@@ -1046,7 +1046,7 @@ gdjs._55Code.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._55Code.asyncCallback13625068(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._55Code.asyncCallback13396508(runtimeScene, asyncObjectsList)));
 }
 }
 

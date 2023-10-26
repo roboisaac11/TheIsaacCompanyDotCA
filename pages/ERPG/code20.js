@@ -156,7 +156,6 @@ gdjs.copyArray(runtimeScene.getObjects("Path"), gdjs.The_32BeginningCode.GDPathO
 {for(var i = 0, len = gdjs.The_32BeginningCode.GDPathObjects1.length ;i < len;++i) {
     gdjs.The_32BeginningCode.GDPathObjects1[i].getBehavior("Opacity").setOpacity(0);
 }
-}{gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "x3 Spook.mp3", 1, true, 100, 1);
 }}
 
 }

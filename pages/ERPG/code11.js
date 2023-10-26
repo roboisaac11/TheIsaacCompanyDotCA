@@ -127,8 +127,7 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "Entanglement (1).mp3", 3, true, 100, 1);
-}
+
 { //Subevents
 gdjs._500Code.eventsList0(runtimeScene);} //End of subevents
 }
@@ -151,7 +150,7 @@ for (var i = 0, k = 0, l = gdjs._500Code.GDTransparentButtonWithWhiteBlueBorderO
 }
 gdjs._500Code.GDTransparentButtonWithWhiteBlueBorderObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.fadeMusicVolume(runtimeScene, 3, 0, 3);
+{gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "x3 Spook.mp3", 1, true, 100, 1);
 }}
 
 }

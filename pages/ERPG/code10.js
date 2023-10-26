@@ -1014,7 +1014,7 @@ isConditionTrue_0 = false;
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs._499Code.GDtextObjects1.length;i<l;++i) {
-    if ( gdjs._499Code.GDtextObjects1[i].getY() <= 448 - (gdjs._499Code.GDtextObjects1[i].getHeight()) ) {
+    if ( gdjs._499Code.GDtextObjects1[i].getY() <= 460 - (gdjs._499Code.GDtextObjects1[i].getHeight()) ) {
         isConditionTrue_0 = true;
         gdjs._499Code.GDtextObjects1[k] = gdjs._499Code.GDtextObjects1[i];
         ++k;
@@ -1023,12 +1023,19 @@ for (var i = 0, k = 0, l = gdjs._499Code.GDtextObjects1.length;i<l;++i) {
 gdjs._499Code.GDtextObjects1.length = k;
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("NewVideo"), gdjs._499Code.GDNewVideoObjects1);
+/* Reuse gdjs._499Code.GDtextObjects1 */
 {gdjs.evtTools.sound.fadeMusicVolume(runtimeScene, 2, 0, 3);
 }{for(var i = 0, len = gdjs._499Code.GDNewVideoObjects1.length ;i < len;++i) {
     gdjs._499Code.GDNewVideoObjects1[i].hide(false);
 }
 }{for(var i = 0, len = gdjs._499Code.GDNewVideoObjects1.length ;i < len;++i) {
     gdjs._499Code.GDNewVideoObjects1[i].play();
+}
+}{for(var i = 0, len = gdjs._499Code.GDtextObjects1.length ;i < len;++i) {
+    gdjs._499Code.GDtextObjects1[i].hide();
+}
+}{for(var i = 0, len = gdjs._499Code.GDtextObjects1.length ;i < len;++i) {
+    gdjs._499Code.GDtextObjects1[i].setY(100000000);
 }
 }}
 
