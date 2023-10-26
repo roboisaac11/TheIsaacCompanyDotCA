@@ -151,6 +151,7 @@ for (var i = 0, k = 0, l = gdjs._500Code.GDTransparentButtonWithWhiteBlueBorderO
 gdjs._500Code.GDTransparentButtonWithWhiteBlueBorderObjects1.length = k;
 if (isConditionTrue_0) {
 {gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "x3 Spook.mp3", 1, true, 100, 1);
+}{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "The Beginning", true);
 }}
 
 }
@@ -163,8 +164,7 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.sound.getMusicOnChannelVolume(runtimeScene, 3) == 0;
 if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "The Beginning", true);
-}}
+}
 
 }
 
