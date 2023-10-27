@@ -997,7 +997,7 @@ isConditionTrue_0 = false;
 
 };gdjs._490Code.mapOfGDgdjs_9546_9595490Code_9546GDBard4Objects1Objects = Hashtable.newFrom({"Bard4": gdjs._490Code.GDBard4Objects1});
 gdjs._490Code.mapOfGDgdjs_9546_9595490Code_9546GDwatchObjects1Objects = Hashtable.newFrom({"watch": gdjs._490Code.GDwatchObjects1});
-gdjs._490Code.asyncCallback13143636 = function (runtimeScene, asyncObjectsList) {
+gdjs._490Code.asyncCallback8898316 = function (runtimeScene, asyncObjectsList) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "4", true);
 }}
 gdjs._490Code.eventsList13 = function(runtimeScene) {
@@ -1008,7 +1008,7 @@ gdjs._490Code.eventsList13 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(5), (runtimeScene) => (gdjs._490Code.asyncCallback13143636(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(5), (runtimeScene) => (gdjs._490Code.asyncCallback8898316(runtimeScene, asyncObjectsList)));
 }
 }
 

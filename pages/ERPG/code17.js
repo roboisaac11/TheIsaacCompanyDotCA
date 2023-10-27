@@ -1024,7 +1024,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs._496Code.asyncCallback13417988 = function (runtimeScene, asyncObjectsList) {
+};gdjs._496Code.asyncCallback13722572 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._496Code.eventsList14 = function(runtimeScene) {
@@ -1035,14 +1035,14 @@ gdjs._496Code.eventsList14 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._496Code.asyncCallback13417988(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._496Code.asyncCallback13722572(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs._496Code.asyncCallback13420060 = function (runtimeScene, asyncObjectsList) {
+};gdjs._496Code.asyncCallback13723756 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._496Code.eventsList15 = function(runtimeScene) {
@@ -1053,7 +1053,7 @@ gdjs._496Code.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._496Code.asyncCallback13420060(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._496Code.asyncCallback13723756(runtimeScene, asyncObjectsList)));
 }
 }
 

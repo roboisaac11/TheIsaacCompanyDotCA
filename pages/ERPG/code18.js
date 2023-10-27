@@ -1044,7 +1044,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs._53Code.asyncCallback13463700 = function (runtimeScene, asyncObjectsList) {
+};gdjs._53Code.asyncCallback13822900 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._53Code.eventsList15 = function(runtimeScene) {
@@ -1055,14 +1055,14 @@ gdjs._53Code.eventsList15 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._53Code.asyncCallback13463700(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._53Code.asyncCallback13822900(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs._53Code.asyncCallback13462868 = function (runtimeScene, asyncObjectsList) {
+};gdjs._53Code.asyncCallback13824916 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(14).add(1);
 }}
 gdjs._53Code.eventsList16 = function(runtimeScene) {
@@ -1073,7 +1073,7 @@ gdjs._53Code.eventsList16 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._53Code.asyncCallback13462868(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs._53Code.asyncCallback13824916(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -1275,6 +1275,10 @@ gdjs.copyArray(runtimeScene.getObjects("NewTiledSprite2"), gdjs._53Code.GDNewTil
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs._53Code.mapOfGDgdjs_9546_959553Code_9546GDBard4Objects1Objects, gdjs._53Code.mapOfGDgdjs_9546_959553Code_9546GDNewTiledSprite2Objects1Objects, false, runtimeScene, true);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(15), true);
+}
 if (isConditionTrue_0) {
 /* Reuse gdjs._53Code.GDBard4Objects1 */
 gdjs.copyArray(runtimeScene.getObjects("Mom2"), gdjs._53Code.GDMom2Objects1);
