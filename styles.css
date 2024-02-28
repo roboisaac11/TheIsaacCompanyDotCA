@@ -216,7 +216,7 @@ ul {
   background-color: #333; /* Dark background color */
   padding: 1rem;
   color: white;
-  margin-bottom: 500px;
+  margin-bottom: 150vh;
 }
 
 .logo {
@@ -459,10 +459,12 @@ b {
 }
 
 .info:active{
+  transition: 0.05s;
   border-top: 5px solid var(--accent-color);
 }
 
 .info:hover{
+  transition: 0.05s;
   border-top: 5px solid rgb(0, 229, 255);
 }
 
@@ -473,4 +475,13 @@ b {
   z-index: 100000000000000;
   pointer-events: none;
   /* display: none; */
+}
+
+
+
+
+
+
+.spacer{
+  height: 250px
 }

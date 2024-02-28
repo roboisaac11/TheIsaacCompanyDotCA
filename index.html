@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="entry.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>The Isaac Company</title>
     <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="16x16">
@@ -12,6 +13,7 @@
     <script>
       var currentTrack = 0;
     </script>
+    <script defer src="entry.js"></script>
 </head>
 <body>
   <canvas id="canvasRain" width="1600" height="1200"></canvas>
@@ -43,11 +45,11 @@
 
     <div class="container">
 
-      <iframe src="./header.html" width="100%" height="350vh" style="border-style: none;" scrolling="no" id="welcome" style="pointer-events: none;"></iframe><hr>
+      <iframe src="./header.html" width="100%" height="350vh" style="border-style: none;" scrolling="no" id="welcome" style="pointer-events: none;" class="hidden right"></iframe><hr>
 
 
 
-    <div class="playlist">
+    <div class="playlist hidden left">
       <div class="header" style="text-align: center;">
         <h1 class="animate-character"><b>♫</b> <small>Music!</small> <b>♫</b></h1><br>
       </div>
@@ -78,23 +80,23 @@
       <br>
       <p class="desc">All the music here was created using GarageBand, and some with BandLab. I'm not releasing music on a set schedule, so don't expect frequent releases.</p>
     </div>
-    <br>
+    <div class="spacer"></div>
 
-    <div class="playlist">
+    <div class="playlist hidden right">
       <div class="header" style="text-align: center;">
         <h1 class="animate-character"><b>🎮</b> <small>Games!</small> <b>🎮</b></h1><br>
       </div>
       <hr><h3 style="text-align: center;">School Projects</h3><hr><br>
       <p class="desc">These games were made for school assignments. Very glitchy, many errors, and just plain confusing because I created them on a deadline. They're still a little fun though, so try them out!</p><br>
-      <button class="info" onclick="window.open('./pages/ERPG/index.html', '_blank').focus();"><h2><b>Einstein RPG</b></h2><br><br><p>A small RPG game starring Albert Einstein.</p></button>
-      <button class="info" onclick="window.open('./pages/TheNorth/index.html', '_blank').focus();"><h2><b>The North</b></h2><br><br><p>A game created after reading 
+      <button class="info hidden bottom" onclick="window.open('./pages/ERPG/index.html', '_blank').focus();"><h2><b>Einstein RPG</b></h2><br><br><p>A small RPG game starring Albert Einstein.</p></button>
+      <button class="info hidden bottom" onclick="window.open('./pages/TheNorth/index.html', '_blank').focus();"><h2><b>The North</b></h2><br><br><p>A game created after reading 
         <b>The Horse and his Boy</b>. You are Peter, heading off to the northern parts of Narnia, trying to fight the giants.</p></button><br>
       <div style="height: 50px;"></div>
         <hr><h3 style="text-align: center;">Personal Projects</h3><hr><br>
         <p class="desc">These games are things I just made for fun, or to experiment with an idea. Still mostly unfinished, or just short, but they were fun to make.</p>
-        <button class="info" onclick="window.open('http:\/\/arithmeclick.theisaaccompany.ca', '_blank').focus();"><h2><b>Arithmeclick</b></h2><br><br><p>An idle game based off of <b>Cookie Clicker</b>, but you solve simple math problems instead of clicking.</p></button>
+        <button class="info hidden bottom" onclick="window.open('http:\/\/arithmeclick.theisaaccompany.ca', '_blank').focus();"><h2><b>Arithmeclick</b></h2><br><br><p>An idle game based off of <b>Cookie Clicker</b>, but you solve simple math problems instead of clicking.</p></button>
     </div>
-    <br>
+    <div class="spacer"></div>
 
   </div>
 
