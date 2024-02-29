@@ -32,6 +32,7 @@
       <div class="title">
         <h1>The Isaac Company</h1>
       </div>
+    </div>
 
 <div class="main-page" id="page">
   <header class="navbar">
@@ -44,8 +45,8 @@
   <div class="content">
 
     <div class="container">
-
-      <iframe src="./header.html" width="100%" height="350vh" style="border-style: none;" scrolling="no" id="welcome" style="pointer-events: none;" class="hidden right"></iframe><hr>
+      <div id="welcome" ></div>
+      <iframe src="./header.html" width="100%" height="350vh" style="border-style: none;" scrolling="no" style="pointer-events: none;" class="hidden right"></iframe><hr>
 
 
 
@@ -96,12 +97,45 @@
         <p class="desc">These games are things I just made for fun, or to experiment with an idea. Still mostly unfinished, or just short, but they were fun to make.</p>
         <button class="info hidden bottom" onclick="window.open('http:\/\/arithmeclick.theisaaccompany.ca', '_blank').focus();"><h2><b>Arithmeclick</b></h2><br><br><p>An idle game based off of <b>Cookie Clicker</b>, but you solve simple math problems instead of clicking.</p></button>
     </div>
-    <div class="spacer"></div>
 
   </div>
 
   </div>
-  </div>
+  <div class="spacer"></div>
+  <h1 class="sticky" style="text-align: center; font-size: 100px;"><div class="hidden left">But there</div> <div class="hidden right">is more!</div></h1>
+  <div class="spacer" style="height: 2000px;"></div> 
+  <div id="no-more-stick" class="hidden"></div>
+  <div class="spacer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="message" class="hidden left" style="text-align: center;"> LOL nevermind</h1>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <h1 id="message" class="hidden top" style="text-align: center;"> There is nothing more</h1>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <h1 id="message" class="hidden right" style="text-align: center;"> So there is no point scrolling through the rest of this site.</h1>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <h1 id="message" class="hidden right" style="text-align: center;"> Bye bye!</h1>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+</div>
 </div>
 </div>
 </body>
@@ -240,7 +274,7 @@ gsap.utils.toArray(".revealUp").forEach(function (elem) {
 
   function toggleRain(){
     if(running==false){
-      alert("BWA HAHAHA. I hope you like this!!")
+      alert("BWA HAHAHA")
       setInterval(createRaindrop, 100); // Add new raindrops every 100ms
       drawRaindrops();
       running=true;
