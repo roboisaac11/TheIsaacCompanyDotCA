@@ -1,0 +1,106 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.track {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-10px, 0);
+  }
+
+  20% {
+    transform: translate(10px, 0);
+  }
+
+  30% {
+    transform: translate(-10px, 0);
+  }
+
+  40% {
+    transform: translate(10px, 0);
+  }
+
+  50% {
+    transform: translate(-10px, 0);
+  }
+
+  60% {
+    transform: translate(10px, 0);
+  }
+
+  70% {
+    transform: translate(-10px, 0);
+  }
+
+  80% {
+    transform: translate(10px, 0);
+  }
+
+  90% {
+    transform: translate(-10px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+
+.audiotrack {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.track-name {
+  flex-grow: 1;
+}
+
+.audio {
+  width: 80%;
+}
+
+.play-button {
+  background-color: rgb(0, 149, 255);
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .audiotrack input[type='range'] {
+    overflow: hidden;
+    width: 80%;
+    -webkit-appearance: none;
+    background-color: var(--bs-card-cap-bg)
+  }
+
+  .audiotrack input[type='range']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    color: rgb(0, 149, 255);
+  }
+
+  .audiotrack input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: rgb(0, 149, 255);
+    box-shadow: -1000px 0 0 1000px #008a99;
+  }
+
+}

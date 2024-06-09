@@ -1,276 +1,347 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="entry.css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <title>The Isaac Company</title>
-    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="./img/isaacCompany_logo.png" sizes="96x96">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script>
-      var currentTrack = 0;
-    </script>
-    <script defer src="entry.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://bootswatch.com/5/darkly/bootstrap.min.css" rel="stylesheet" type="text/css"
+    id="bootswatchTheme" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-  <canvas id="canvasRain" width="1600" height="1200"></canvas>
 
-    <div class="card-track">
-        <div class="card-wrapper">
-          <div class="card">
-            <div class="card-image">
-              <img src="./img/isaacCompany_logo.png" id="logo"/>
-            </div>
-            <div class="card-gradient"></div>
-            <div class="card-letters"></div>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark default_cursor_cs sticky-top" data-bs-theme="dark" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: rgb(0, 149, 255)"><b>The Isaac Company</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse default_cursor_cs" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#music">Music</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#games">Games</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="progress default_cursor_cs fixed-top" style="height: 10px;">
+    <div class="progress-bar default_cursor_cs" role="progressbar" style="width: 0%;" aria-valuenow="0"
+      aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
+  <div class="position-fixed bottom-0 end-0" style="margin-bottom: 10px; z-index: 1000;">
+    <div id="notifications">
+    </div>
+  </div>
+
+  <section id="main" style="padding: 20px;">
+
+    <div class="card mb-3">
+      <h3 class="card-header default_cursor_cs">
+      </h3>
+      <div class="d-block user-select-none position-relative" style="width: 100%; height: 50vh;">
+        <video id="titleBackground" class="default_cursor_cs"
+          style="width: 100%; height: 100%; object-fit: cover; filter: blur(10px);" autoplay loop muted>
+          <source src="titleBackgroundVideo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-anchor: middle; text-shadow: 1px 0 black; letter-spacing: 0.5px; font-weight: 900; color: white; filter: blur(1px);">
+          <h1><b>The Isaac Company</b></h1>
+        </div>
+      </div>
+      <div class=" card-body default_cursor_cs">
+        <p class="card-text default_cursor_cs">
+          Welcome to The Isaac Company! The Isaac Company was created by a guy named (you guessed it) Isaac. On this
+          website you'll find a bunch of random and broken projects that he creates. And look around, there are some
+          secrets hiding here!
+        </p>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center">
+        <div class="card border-info mb-3 track" style="max-width: 25rem;">
+          <div class="card-header">MERCH!!!</div>
+          <div class="card-body">
+            <h4 class="card-title">Buy Merch</h4>
+            <p class="card-text">Yes, it's true! Everybody's life-long dream is to wear a shirt advertising The Isaac
+              Company, and now you can fulfill that dream!</p>
+            <hr>
+            <a target="_blank" href="https://theisaaccompanymerch.myspreadshop.ca" class="card-link">Buy Now!</a>
+          </div>
+        </div>
+        <div class="card border-warning mb-3 track" style="max-width: 25rem;" id="hmmmmm">
+          <div class="card-header">???</div>
+          <div class="card-body">
+            <h4 class="card-title">Hmm.....</h4>
+            <p class="card-text">Wow, this is really wierd. It's like this entire box is pointless, and was added for no
+              reason. Carry on, then.</p>
+            <hr>
+            <button type="button" class="btn btn-outline-warning" style="float: right;" id="hmmButton">Ok.</button>
           </div>
         </div>
       </div>
-      <div class="title">
-        <h1>The Isaac Company</h1>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="mutenotify">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Mute Notifications</label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="btn-group" role="group" aria-label="Dark or Light mode">
+            <input type="radio" class="btn-check" name="btnradio" id="dark" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="dark">Dark</label>
+            <input type="radio" class="btn-check" name="btnradio" id="light" autocomplete="off">
+            <label class="btn btn-outline-primary" for="light">Light</label>
+          </div>
+        </li>
+      </ul>
+      <div class="card-footer text-muted">
+        <span style="color: var(--bs-card-cap-bg)"
+          onclick="window.location='https://sam-tech.epizy.com/nacho'">...</span>
       </div>
     </div>
-
-<div class="main-page" id="page">
-  <header class="navbar">
-    <div class="logo">The Isaac Company</div>
-    <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#welcome">About</a>
-    </nav>
-  </header>
-  <div class="content">
-
-    <div class="container">
-      <div id="welcome" ></div>
-      <iframe src="./header.html" width="100%" height="350vh" style="border-style: none;" scrolling="no" style="pointer-events: none;" class="hidden right"></iframe><hr>
-
-
-
-    <div class="playlist hidden left">
-      <div class="header" style="text-align: center;">
-        <h1 class="animate-character"><b>♫</b> <small>Music!</small> <b>♫</b></h1><br>
-      </div>
-      <div class="track">
+    <div class="card" id="music" style="margin-bottom: 20px">
+      <h4 class="card-header default_cursor_cs">
+      </h4>
+      <div class="card-body">
+        <h4 class="card-title">Music</h4>
+        <h6 class="card-subtitle mb-2 text-muted">By Isaac Kroeker</h6>
+        <p class="card-text">Here's some tracks I made in my free time.</p>
+        <div class="audiotrack">
           <div class="track-name"><b>Quantum</b> - Isaac Kroeker</div>
-          <audio id="audio1" controls hidden>
-              <source src="Quantum.mp3" type="audio/mpeg">
+          <audio class="audio" id="audio1" controls="" hidden="">
+            <source src="Quantum.mp3" type="audio/mpeg">
           </audio>
-          <button class="play-button" id="play-pause">Play</button>
-          <input type="range" id="progress1" min="0" max="100" value="0" step="0.01">
-      </div>
-      <div class="track">
-          <div class="track-name"><b>Entanglement</b> - I<span style="color: rgb(255, 0, 0);" onclick="toggleRain()">s</span>aac Kroeker</div>
-          <audio id="audio2" controls hidden>
-              <source src="Entanglement.mp3" type="audio/mpeg">
+          <button class="play-button btn" id="play-pause">Play</button>
+          <input type="range" class="progress1" min="0" max="100" value="0" step="0.01">
+        </div>
+        <div class="audiotrack">
+          <div class="track-name"><b>Entanglement</b> - Isaac Kroeker</div>
+          <audio class="audio" id="audio1" controls="" hidden="">
+            <source src="Entanglement.mp3" type="audio/mpeg">
           </audio>
-          <button class="play-button" id="play-pause">Play</button>
-          <input type="range" id="progress2" min="0" max="100" value="0" step="0.01">
-      </div>
-      <div class="track">
-        <div class="track-name"><b>Particles</b> - Isaac Kroeker</div>
-        <audio id="audio3" controls hidden>
+          <button class="play-button btn" id="play-pause">Play</button>
+          <input type="range" class="progress1" min="0" max="100" value="0" step="0.01">
+        </div>
+        <div class="audiotrack">
+          <div class="track-name"><b>Particles</b> - Isaac Kroeker</div>
+          <audio class="audio" id="audio1" controls="" hidden="">
             <source src="Particles.mp3" type="audio/mpeg">
-        </audio>
-        <button class="play-button" id="play-pause">Play</button>
-        <input type="range" id="progress2" min="0" max="100" value="0" step="0.01">
+          </audio>
+          <button class="play-button btn" id="play-pause">Play</button>
+          <input type="range" class="progress1" min="0" max="100" value="0" step="0.01">
+        </div>
       </div>
-      <br>
-      <p class="desc">All the music here was created using GarageBand, and some with BandLab. I'm not releasing music on a set schedule, so don't expect frequent releases.</p>
-    </div>
-    <div class="spacer"></div>
-
-    <div class="playlist hidden right">
-      <div class="header" style="text-align: center;">
-        <h1 class="animate-character"><b>🎮</b> <small>Games!</small> <b>🎮</b></h1><br>
-      </div>
-      <hr><h3 style="text-align: center;">School Projects</h3><hr><br>
-      <p class="desc">These games were made for school assignments. Very glitchy, many errors, and just plain confusing because I created them on a deadline. They're still a little fun though, so try them out!</p><br>
-      <button class="info hidden bottom" onclick="window.open('./pages/ERPG/index.html', '_blank').focus();"><h2><b>Einstein RPG</b></h2><br><br><p>A small RPG game starring Albert Einstein.</p></button>
-      <button class="info hidden bottom" onclick="window.open('./pages/TheNorth/index.html', '_blank').focus();"><h2><b>The North</b></h2><br><br><p>A game created after reading 
-        <b>The Horse and his Boy</b>. You are Peter, heading off to the northern parts of Narnia, trying to fight the giants.</p></button><br>
-      <div style="height: 50px;"></div>
-        <hr><h3 style="text-align: center;">Personal Projects</h3><hr><br>
-        <p class="desc">These games are things I just made for fun, or to experiment with an idea. Still mostly unfinished, or just short, but they were fun to make.</p>
-        <button class="info hidden bottom" onclick="window.open('http:\/\/arithmeclick.theisaaccompany.ca', '_blank').focus();"><h2><b>Arithmeclick</b></h2><br><br><p>An idle game based off of <b>Cookie Clicker</b>, but you solve simple math problems instead of clicking.</p></button>
     </div>
 
-  </div>
+    <div class="card" id="games">
+      <h4 class="card-header default_cursor_cs">
+      </h4>
+      <div class="card-body">
+        <h4 class="card-title">Games</h4>
+        <h6 class="card-subtitle mb-2 text-muted">By Isaac Kroeker</h6>
+        <p class="card-text">These game are mostly incomplete, and have plently of bugs and glitches. But they're still
+          fun to play, so go check them out.</p>
+        <div class="d-flex flex-wrap">
+          <div class="card border-info mb-3 track" style="max-width: 20rem;">
+            <div class="card-header">ARITHMECLICK</div>
+            <div class="card-body">
+              <p class="card-text">This is the first browser game I made! It's based off of Cookie Clicker, but it's the
+                math version.</p>
+              <a target="_blank" href="http://arithmeclick.theisaaccompany.ca"><button type="button"
+                  class="btn btn-outline-info">Play Now!</button></a>
+            </div>
+          </div>
+          <div class="card border-danger mb-3 track" style="max-width: 20rem;">
+            <div class="card-header">THE NORTH</div>
+            <div class="card-body">
+              <p class="card-text">I made this game as a school project, after reading <b>The Horse and his Boy</b>. You
+                are Peter, going off to fight the Giants.</p>
+              <a target="_blank" href="https://www.theisaaccompany.ca/pages/TheNorth/index.html"><button type="button"
+                  class="btn btn-outline-danger">Play Now!</button></a>
+            </div>
+          </div>
+          <div class="card border-success mb-3 track" style="max-width: 20rem;">
+            <div class="card-header">EINSTEIN RPG</div>
+            <div class="card-body">
+              <p class="card-text">This was also a school project, where you are Albert Einstein. You have to go around
+                and live out his life.</p>
+              <a target="_blank" href="https://www.theisaaccompany.ca/pages/ERPG/index.html"><button type="button"
+                  class="btn btn-outline-success">Play Now!</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  </div>
-  <div class="spacer"></div>
-  <h1 class="sticky" style="text-align: center; font-size: 100px;"><div class="hidden left">But there</div> <div class="hidden right">is more!</div></h1>
-  <div class="spacer" style="height: 2000px;"></div> 
-  <div id="no-more-stick" class="hidden"></div>
-  <div class="spacer"></div>
+    <div class="card" id="certificates" style="margin-top: 20px;">
+      <h4 class="card-header default_cursor_cs">
+      </h4>
+      <div class="card-body">
+        <h4 class="card-title">Isaac Digital Certificate</h4>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <p class="card-text">My very own variant of a digital certificate! If you don't know what that is, check out <a
+            href="https://www.okta.com/identity-101/digital-certificate/" target="_blank">this page</a>. Below you can
+          create one,
+          issued by The Isaac Company, and verify one to ensure it has not been altered. I also added an additional
+          feature where you can add a comment to your certificate.</p>
+      </div>
+      <div class="d-flex flex-wrap">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Create One</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Get a certificate issued by The Isaac Company</h6>
+            <form id="createIDC">
+              <fieldset>
+                <div>
+                  <label for="commonName" class="form-label mt-4">Common Name</label>
+                  <input type="text" class="form-control" id="commonName" aria-describedby="commonName"
+                    placeholder="Common Name" required>
+                </div>
+                <div>
+                  <label for="organization" class="form-label mt-4">Organization</label>
+                  <input type="text" class="form-control" id="organization" aria-describedby="organization"
+                    placeholder="Organization (optional)">
+                </div>
+                <div>
+                  <label for="email" class="form-label mt-4">Email Address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="email"
+                    placeholder="Email (optional)">
+                </div>
+                <div>
+                  <label for="publicKey" class="form-label mt-4">Public Key</label>
+                  <textarea class="form-control" id="publicKey" rows="3" placeholder="Paste public key here"
+                    required></textarea>
+                </div>
+                <div>
+                  <label for="message" class="form-label mt-4">Message</label>
+                  <textarea class="form-control" id="message" rows="3"
+                    placeholder="Enter a message here (optional)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Verify One</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Verify a certificate to ensure it has not be altered</h6>
+            <form id="verifyIDC">
+              <fieldset>
+                <div>
+                  <label for="certFile" class="form-label mt-4">Upload a .idc file</label>
+                  <input class="form-control" type="file" id="certFile" accept=".idc" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <!-- <div class="card" style="max-width: 30%">
+          <div class="card-body">
+            <h4 class="card-title">View One</h4>
+            <h6 class="card-subtitle mb-2 text-muted">View the information on one of your certificates</h6>
+            <form id="viewIDC">
+              <fieldset>
+                <div>
+                  <label for="viewCertFile" class="form-label mt-4">Upload a .idc file</label>
+                  <input class="form-control" type="file" id="viewCertFile" accept=".idc" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>
+              </fieldset>
+              <div class="accordion" id="accordionExample" hidden>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Issue Information
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample" style="">
+                    <div class="accordion-body">
+                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                      collapse plugin adds the appropriate classes that we use to style each element. These classes
+                      control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                      modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                      that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                      does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Accordion Item #2
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                      collapse plugin adds the appropriate classes that we use to style each element. These classes
+                      control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                      modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                      that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                      does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Accordion Item #3
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                      collapse plugin adds the appropriate classes that we use to style each element. These classes
+                      control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                      modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                      that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                      does limit overflow.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </section>
 
 
-  <h1 id="message" class="hidden left" style="text-align: center;"> LOL nevermind</h1>
-  <div class="spacer"></div>
-  <div class="spacer"></div>
 
-  <h1 id="message" class="hidden top" style="text-align: center;"> There is nothing more</h1>
-  <div class="spacer"></div>
-  <div class="spacer"></div>
 
-  <h1 id="message" class="hidden right" style="text-align: center;"> So there is no point scrolling through the rest of this site.</h1>
-  <div class="spacer"></div>
-  <div class="spacer"></div>
 
-  <h1 id="message" class="hidden right" style="text-align: center;"> Bye bye!</h1>
-  <div class="spacer"></div>
-  <div class="spacer"></div>
 
-</div>
-</div>
-</div>
+
+
+  <script src="script.js"></script>
+  <script src="wierdFunctions.js"></script>
+  <script src="scrollspeed.js"></script>
+  <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="ScrollTrigger.min.js"></script>
-<script src="gsap.min.js"></script>
-<script src="script.js"></script>
-<script>
-  const audioElements = document.querySelectorAll('audio');
-  const progressBars = document.querySelectorAll('input[type="range"]');
 
-  const playPauseButton = document.querySelectorAll('.play-button');
-
-  playPauseButton.forEach((button, index)=>{
-    button.addEventListener('click', (e) => {
-    const audio = audioElements[index];
-      if (audio.paused) {
-          audio.play();
-          button.textContent = 'Pause';
-      } else {
-          audio.pause();
-          button.textContent = 'Play';
-      }
-    });
-  });
-  audioElements.forEach((audio, index) => {
-      audio.addEventListener('timeupdate', () => {
-          const currentTime = audio.currentTime;
-          const duration = audio.duration;
-          const progressPercentage = (currentTime / duration) * 100;
-          progressBars[index].value = progressPercentage;
-      });
-
-      progressBars[index].addEventListener('input', (e) => {
-          const seekTime = (e.target.value / 100) * audio.duration;
-          audio.currentTime = seekTime;
-      });
-  });
-</script>
-
-
-<script>
-window.addEventListener('scroll', function(e) {
-  var el = e.target;
-  while (el && el !== document && !isScrollable(el)) {
-  	el = el.parent;
-  }
-  console.log('Scrolled element: '+ (el.className || 'document'));
-  //shake()
-}, true);
-
-function isScrollable(el) {
-  return el.scrollWidth > el.clientWidth || el.scrollHeight > el.clientHeight;
-}
-
-</script>
-<script>
-gsap.registerPlugin(ScrollTrigger);
-// REVEAL //
-gsap.utils.toArray(".revealUp").forEach(function (elem) {
-  ScrollTrigger.create({
-    trigger: elem,
-    start: "top 80%",
-    end: "bottom 20%",
-    markers: true,
-    onEnter: function () {
-      gsap.fromTo(
-        elem,
-        { y: 100, autoAlpha: 0 },
-        {
-          duration: 1.25,
-          y: 0,
-          autoAlpha: 1,
-          ease: "back",
-          overwrite: "auto"
-        }
-      );
-    },
-    onLeave: function () {
-      gsap.fromTo(elem, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
-    },
-    onEnterBack: function () {
-      gsap.fromTo(
-        elem,
-        { y: -100, autoAlpha: 0 },
-        {
-          duration: 1.25,
-          y: 0,
-          autoAlpha: 1,
-          ease: "back",
-          overwrite: "auto"
-        }
-      );
-    },
-    onLeaveBack: function () {
-      gsap.fromTo(elem, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
-    }
-  });
-});
-
-</script>
-
-<script>
-  var running = false;
-  const canvas = document.getElementById('canvasRain');
-  const ctx = canvas.getContext('2d');
-  const raindropImages = []; // Array to store raindrop image objects
-
-  // Load your raindrop image (replace with your actual image URL)
-  const raindropImage = new Image();
-  raindropImage.src = './img/me.jpg';
-
-  function createRaindrop() {
-      const x = Math.random() * canvas.width;
-      const y = -Math.random() * canvas.height;
-      const speed = 10 + Math.random() * 3;
-      raindropImages.push({ x, y, speed });
-  }
-
-  function drawRaindrops() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (const drop of raindropImages) {
-          drop.y += drop.speed;
-          ctx.drawImage(raindropImage, drop.x, drop.y, 60, 60); // Adjust raindrop size
-          if (drop.y > canvas.height) {
-              drop.y = -10;
-              drop.x = Math.random() * canvas.width;
-          }
-      }
-
-      requestAnimationFrame(drawRaindrops);
-  }
-
-  // setInterval(createRaindrop, 100); // Add new raindrops every 100ms
-  // drawRaindrops();
-
-  function toggleRain(){
-    if(running==false){
-      alert("BWA HAHAHA")
-      setInterval(createRaindrop, 100); // Add new raindrops every 100ms
-      drawRaindrops();
-      running=true;
-    }
-    else{
-      alert("Sorry, YOU CANNOT GO BACK!!")
-    }
-  }
-</script>
 </html>
