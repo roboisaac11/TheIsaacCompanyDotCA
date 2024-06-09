@@ -8,6 +8,11 @@ html {
   margin-left: 10px;
 }
 
+@font-face {
+  font-family: "digital7";
+  src: url('digital-7.ttf') format("truetype");
+}
+
 @keyframes shake {
   0% {
     transform: translate(0, 0);
