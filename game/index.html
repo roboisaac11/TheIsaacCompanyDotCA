@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: black;
+      }
+      .over {
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <video hidden autoplay>
+      <source src="rick.mp4" type="video/mp4">
+      Bruh.
+    </video>
+    <div id="clicker" class="over">
+      <h1>Click anywhere on the screen to begin</h1>
+    </div>
+    <script>
+      document.getElementById("clicker").addEventListener("click", () => {
+        document.getElementById("clicker").style.display = "none";
+        document.getElementsByTagName("video")[0].hidden = false;
+        document.getElementsByTagName("video")[0].play();
+      })
+    </script>
+  </body>
+</html>
