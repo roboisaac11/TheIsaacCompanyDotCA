@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Sports</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            z-index: 1; /* Ensure the div is above the iframe */
+        }
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Ensure the iframe is behind the div */
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <div class="overlay"></div>
+        <iframe src="https://moresportstks.wixsite.com/more-sports/"></iframe>
+    </div>
+</body>
+</html>
