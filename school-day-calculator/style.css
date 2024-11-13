@@ -1,0 +1,133 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --secondary-color: #f0f0f0;
+    --hover-color: #adadad;
+    --border-color: #5f5f5f;
+
+    /* --background-color: #202020;
+    --text-color: #ffffff;
+    --secondary-color: #323232;
+    --hover-color: #525252;
+    --border-color: #cecece; */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.sortable-list {
+    max-width: 350px;
+    margin: 0 auto;
+    max-height: 400px;
+    overflow-y: scroll;
+    scrollbar-color: var(--secondary-color) var(--background-color);
+}
+ 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ 
+li {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    margin: 5px;
+    list-style-type: none;
+    position: relative;
+}
+
+li:active{
+    cursor: grab;
+    background-color: var(--hover-color);
+}
+
+/* Hide the default radio button */
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style the custom radio button */
+label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+}
+
+/* Create the custom square radio button */
+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-color);
+}
+
+/* Create the filled square when checked */
+input[type="radio"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Style for the trash icon */
+.trash-icon {
+    position: absolute;
+    right: 17px; /* Push it to the far right */
+    top: 45%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--border-color);
+}
+
+.trash-icon:hover {
+    color: var(--hover-color); /* Change color when hovered */
+}
+
+/* Style for each section inside the list item */
+.section1, .section2, .section3 {
+    margin-right: 10px; /* Some space between sections */
+    margin-bottom: 5px;
+    display: flex;
+}
+
+h6{
+    margin-right: 10px; /* Add space between the heading and the input */
+    margin-bottom: 0; /* Remove bottom margin to keep it aligned */
+    font-size: small;
+}
+
+/* Style for the input fields */
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Ensure inputs are the same height */
+input[type="text"], input[type="date"] {
+    height: 36px; /* Set height to be consistent */
+}
