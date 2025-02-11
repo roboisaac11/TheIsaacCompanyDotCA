@@ -3,12 +3,14 @@ window.data = {};
 window.addEventListener("load",() => {
     let savedData = window.localStorage.getItem('saveData');
     if (savedData == null) {
+        console.log("no save data");
         window.localStorage.clear();
         window.data = {
             "item1": {
                 "startDate": "",
                 "endDate": "",
                 "daySix": false,
+                "dayThree": false,
                 "startToday": false
             }
         }
@@ -49,8 +51,12 @@ function addElement(id, dataObject){
                             <input type="date" placeholder="Date">
                         </div>
                         <div class="section1">
+                            <h6>Ignore Day 6</h6>
+                            <input type="checkbox" id="six">
+                        </div>
+                        <div class="section1">
                             <h6>Ignore Day 3</h6>
-                            <input type="checkbox">
+                            <input type="checkbox" id="three">
                         </div>
                         <div class="section3">
                             <h6>Start on today</h6>
@@ -88,6 +94,9 @@ function addElement(id, dataObject){
         });
         if (index == 0){ // day six
             checkbox.checked = dataObject["daySix"];
+        }
+        if (index == 1){ // day three
+            checkbox.checked = dataObject["dayThree"];
         }
         else{
             checkbox.checked = dataObject["today"];
