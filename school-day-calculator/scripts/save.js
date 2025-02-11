@@ -49,7 +49,7 @@ function addElement(id, dataObject){
                             <input type="date" placeholder="Date">
                         </div>
                         <div class="section1">
-                            <h6>Ignore Day 6</h6>
+                            <h6>Ignore Day 3</h6>
                             <input type="checkbox">
                         </div>
                         <div class="section3">
