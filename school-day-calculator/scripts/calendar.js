@@ -27,7 +27,7 @@ class SchoolCalendar {
         }
     }
 
-    daysTill(startDate, endDate, excludeDaySix = true, excludeExams = true) {
+    daysTill(startDate, endDate, excludeDaySix = true, excludeDayThree = true, excludeExams = true) {
         const [startMonth, startDay] = startDate;
         const [endMonth, endDay] = endDate;
 
@@ -68,10 +68,16 @@ class SchoolCalendar {
                 // It's a weekend or holiday
                 console.log("Skipping weekend or holiday");
                 continue;
-            } else if (day == 3 && excludeDaySix) { // Now is skipping day 3 instead of day six, but this should change later
+            } else if (day == 6 && excludeDaySix) {
                 // Exclude Day Six if requested
-                console.log("Skipping Day three");
+                console.log("Skipping Day six");
                 continue;
+            }
+            else if (day == 3 && excludeDayThree) {
+                    // Exclude Day Six if requested
+                    console.log("Skipping Day three");
+                    continue;
+
             } else if (day.toString().endsWith("11") && excludeExams) {
                 // Exclude exams
                 console.log("Skipping exams");
