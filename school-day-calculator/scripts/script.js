@@ -32,8 +32,12 @@ function createNewListItem() {
                             <input type="date" placeholder="Date">
                         </div>
                         <div class="section1">
+                            <h6>Ignore Day 6</h6>
+                            <input type="checkbox" id="six">
+                        </div>
+                        <div class="section1">
                             <h6>Ignore Day 3</h6>
-                            <input type="checkbox">
+                            <input type="checkbox" id="three">
                         </div>
                         <div class="section3">
                             <h6>Start on today</h6>
@@ -86,6 +90,7 @@ function createNewListItem() {
         "startDate": "",
         "endDate": "",
         "daySix": false,
+        "dayThree": false,
         "startToday": false
     }
 
@@ -134,9 +139,9 @@ function toggleDateInput(checkbox) {
     }
 }
 
-function get_school_days(startMonth, startDay, endMonth, endDay, ignoreSix) {
+function get_school_days(startMonth, startDay, endMonth, endDay, ignoreSix, ignoreThree) {
 
-    const days = calendar.daysTill([startMonth, startDay], [endMonth, endDay], ignoreSix, false);
+    const days = calendar.daysTill([startMonth, startDay], [endMonth, endDay], ignoreSix, ignoreThree, false);
     return days;
 
 }
