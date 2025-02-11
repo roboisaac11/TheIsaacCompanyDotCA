@@ -13,7 +13,8 @@ function handleInputChange(inputElement) {
     const isChecked = listItem.querySelector('input[type="radio"]').checked;
     const startDate = listItem.querySelector('.section1 input[type="date"]').value;
     const endDate = listItem.querySelector('.section2 input[type="date"]').value;
-    const daySix = listItem.querySelector('.section1 input[type="checkbox"]').checked;
+    const daySix = listItem.querySelector('.section1 input[type="checkbox"]#six').checked;
+    const dayThree = listItem.querySelector('.section1 input[type="checkbox"]#three').checked;
     const today = listItem.querySelector('.section3 input[type="checkbox"]').checked;
 
     // console.log('List Item Info:');
@@ -32,7 +33,7 @@ function handleInputChange(inputElement) {
         const startDay = startDateObj.getDate()
         const endDay = endDateObj.getDate()
 
-        var days = get_school_days(startMonth, startDay, endMonth, endDay, daySix);
+        var days = get_school_days(startMonth, startDay, endMonth, endDay, daySix, dayThree);
 
         document.getElementById("days-between").innerHTML = days;
     }
@@ -41,6 +42,7 @@ function handleInputChange(inputElement) {
         "startDate": startDate,
         "endDate": endDate,
         "daySix": daySix,
+        "dayThree": dayThree,
         "today": today
     };
 
