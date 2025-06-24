@@ -1,0 +1,12 @@
+{
+  "name": "Top-down grid movement",
+  "short_name": "Top-down grid movement",
+  "id": "com.example.gamename",
+  "description": "Show how to seamlessly align on a grid a top-down character using the pixel perfect extension.",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
