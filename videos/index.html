@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Films - The Isaac Company</title>
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/sky.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/games.css">
+
+  <!-- Embedded styles for video layout -->
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f1f1f1;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .video-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: scale(1.01);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+      display: block;
+      pointer-events: none;
+    }
+
+    .video-info {
+      padding: 1rem;
+    }
+
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .video-description {
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    /* Overlay styles */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    .overlay iframe {
+      width: 90vw;
+      height: 50vw;
+      max-width: 1000px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .close-btn:hover {
+      background: #ff5555;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .overlay iframe {
+        width: 95vw;
+        height: 60vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content active">
+    <div class="graph-paper" style="height: 400%;"></div>
+
+    <div class="back-button">
+      <a href="../">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
+    <h1 style="margin-bottom: 100px;"><b class="slide">Short Film Collection</b></h1>
+    <p class="subtitle">A bunch of films me and my friends made. Very low quality and very cringe, but maybe you can make it though some of them.</p>
+
+    <div class="gallery">
+      <!-- Film 1 -->
+      <div class="video-card" onclick="playVideo('1BU4k3uG1kyCE70qBsQ7DkrVslMg3591O')">
+        <iframe src="https://drive.google.com/file/d/1BU4k3uG1kyCE70qBsQ7DkrVslMg3591O/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">Don't Smoke</div>
+          <div class="video-description">First film I ever made in my life. It was created as a project to promote not smoking.</div>
+        </div>
+      </div>
+
+      <!-- Film 2 -->
+      <div class="video-card" onclick="playVideo('1ynHT2Z4H9eS56moHtvLpV1vlf6YRKjUs')">
+        <iframe src="https://drive.google.com/file/d/1ynHT2Z4H9eS56moHtvLpV1vlf6YRKjUs/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">The Hunt</div>
+          <div class="video-description">Nobody really knows what is going on in this film. It's supposed to be based off the game <i>man hunt</i>, but who really knows.</div>
+        </div>
+      </div>
+
+      <!-- Film 3 -->
+      <div class="video-card" onclick="playVideo('16qIs34uiqsXGC7K8jNvzYOlhQvlwkvTN')">
+        <iframe src="https://drive.google.com/file/d/16qIs34uiqsXGC7K8jNvzYOlhQvlwkvTN/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">Shattered - Move Trailer</div>
+          <div class="video-description">A fake trailer for a non-existant movie on the book <i>Shattered</i> by Eric Walters</div>
+        </div>
+      </div>
+
+    
+      <!-- Film 4 -->
+      <div class="video-card" onclick="playVideo('13YsJAH56XwjgLCkGBjNTarVP9c9P6D78')">
+        <iframe src="https://drive.google.com/file/d/13YsJAH56XwjgLCkGBjNTarVP9c9P6D78/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">The Ramses Move</div>
+          <div class="video-description">A movie about the Pharaoh Ramses II, also known as Ramses the Great</div>
+        </div>
+      </div>
+
+      <!-- Film 5 -->
+      <div class="video-card" onclick="playVideo('1Rj8oQX8nzlsOrTmV1HgNmmXzXcGPDSDv')">
+        <iframe src="https://drive.google.com/file/d/1Rj8oQX8nzlsOrTmV1HgNmmXzXcGPDSDv/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">William Tyndale - Ep. 1</div>
+          <div class="video-description">The story of William Tyndale</div>
+        </div>
+      </div>
+
+      <!-- Film 6 -->
+      <div class="video-card" onclick="playVideo('12wRqMvinvQ5bHk5aJ4Kuc69J2xEMyqe5')">
+        <iframe src="https://drive.google.com/file/d/12wRqMvinvQ5bHk5aJ4Kuc69J2xEMyqe5/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">William Tyndale - Ep. 2</div>
+          <div class="video-description">The story of William Tyndale</div>
+        </div>
+      </div>
+
+      <!-- Film 7 -->
+      <div class="video-card" onclick="playVideo('1ovK6pW6vynT4G9qaZMs5olXhdoqELNCy')">
+        <iframe src="https://drive.google.com/file/d/1ovK6pW6vynT4G9qaZMs5olXhdoqELNCy/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">William Tyndale - Ep. 3</div>
+          <div class="video-description">The story of William Tyndale</div>
+        </div>
+      </div>
+
+
+      <!-- Film 8 -->
+      <div class="video-card" onclick="playVideo('1ThDiOZAwUAr9NZ1nkVQ-GkWJfXl6bYzW')">
+        <iframe src="https://drive.google.com/file/d/1ThDiOZAwUAr9NZ1nkVQ-GkWJfXl6bYzW/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">Shark Tank - More Sports Episode</div>
+          <div class="video-description">Guys I made it on to Shark Tank</div>
+        </div>
+      </div>
+
+
+      <!-- Film 9 -->
+      <div class="video-card" onclick="playVideo('183DLNZTN8F7Bq2OLOWDZ02x-dEzMPPaA')">
+        <iframe src="https://drive.google.com/file/d/183DLNZTN8F7Bq2OLOWDZ02x-dEzMPPaA/preview" allowfullscreen></iframe>
+        <div class="video-info">
+          <div class="video-title">Strats for Handling Stress</div>
+          <div class="video-description">This was for a health project</div>
+        </div>
+      </div>
+
+
+      </div>
+      </div>
+
+    <!-- Overlay Player -->
+    <div class="overlay" id="videoOverlay">
+      <button class="close-btn" onclick="closeVideo()">×</button>
+      <iframe id="overlayFrame" src="" allowfullscreen allow="autoplay"></iframe>
+    </div>
+
+  <script>
+    function playVideo(id) {
+      const overlay = document.getElementById('videoOverlay');
+      const frame = document.getElementById('overlayFrame');
+      frame.src = `https://drive.google.com/file/d/${id}/preview`;
+      overlay.classList.add('active');
+    }
+
+    function closeVideo() {
+      const overlay = document.getElementById('videoOverlay');
+      const frame = document.getElementById('overlayFrame');
+      overlay.classList.remove('active');
+      frame.src = "";
+    }
+  </script>
+</body>
+</html>

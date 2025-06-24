@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>The Giver Text Adventure</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- <script src="https://replit.com/public/js/repl-auth-v2.js"></script> -->
+</head>
+
+<body>
+  <div class="game-container" id="game">
+    <h1 id="title">The Giver Text Adventure</h1>
+    <div class="game-info">
+      <div id="map">
+        <code>
+          MAP:
+          <table>
+              <tr id="row1">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+              <tr id="row2">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+              <tr id="row3">
+                  <td></td>
+                  <td></td>
+                  <td style="color: grey">&</td>
+                  <td></td>
+                  <td></td>
+              </tr>
+              <tr id="row4">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+              <tr id="row5">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+          </table>
+        </code>
+      </div>
+      <div id="stats">
+        <p>
+          <code>
+            NAME: <span id="name">Jonas</span><br>
+            QUEST: <span id="questname">None</span> <span id="questcompleted"></span>/<span id="questtotal"></span><br>
+            XP: <span id="xp">0</span><br>
+            LEVEL: <span id="level">0</span><br>
+            EQUIPPED: <span id="equipped">None</span><br>
+            MOVES: <span id="moves">0</span>
+          </code>
+        </p>
+      </div>
+    </div>
+    <pr id="last" class="last_command_holder">> <span id="last_command"></span></pr>
+    <form id="terminal" autocomplete="off">
+      <pr>></pr><input type="text" id="command_input" name="command_input" autofocus>
+    </form>
+    <hr id="line">
+    <div class="output">
+      <code id="output">
+      </code>
+    </div>
+  </div>
+  <!-- <script type="module">const user = await getUserInfo(); console.log(user); </script> -->
+  <script src="script.js"></script>
+  <script>
+    // Add this to your script.js or inline within <script> tags in your HTML
+    document.addEventListener("DOMContentLoaded", function () {
+      function applyGlitchEffect(element, duration = 500, intensity = 5) {
+        // Create the glitch effect by creating multiple layers with different color offsets
+        let glitchInterval;
+        let startTime = Date.now();
+
+        // Apply the glitch effect by setting multiple layers
+        function glitch() {
+          let now = Date.now();
+          if (now - startTime > duration) {
+            clearInterval(glitchInterval);
+            element.style.filter = '';
+            element.style.transform = '';
+            return;
+          }
+
+          // Random offsets for glitch effect
+          let offset1 = Math.random() * intensity - intensity / 2;
+          let offset2 = Math.random() * intensity - intensity / 2;
+          let offset3 = Math.random() * intensity - intensity / 2;
+
+          element.style.filter = `drop-shadow(${offset1}px ${offset1}px 0 red) drop-shadow(${offset2}px ${offset2}px 0 green) drop-shadow(${offset3}px ${offset3}px 0 blue)`;
+          element.style.transform = `translate(${Math.random() * intensity - intensity / 2}px, ${Math.random() * intensity - intensity / 2}px)`;
+        }
+
+        glitchInterval = setInterval(glitch, 50);
+      }
+
+      const mapElement = document.getElementById("map");
+      const titleElement = document.getElementById("title");
+      const statsElement = document.getElementById("stats");
+      const outputElement = document.getElementById("output");
+      const lastCommandElement = document.getElementById("last_command");
+      const gameElement = document.getElementById("game");
+      const last = document.getElementById("last");
+      const terminal = document.getElementById("terminal");
+      const line = document.getElementById("line");
+
+      mapElement.addEventListener('click', function () {
+        applyGlitchEffect(mapElement, 1000, 15);
+      });
+
+      titleElement.addEventListener('click', function () {
+        applyGlitchEffect(titleElement, 1000, 15);
+      });
+
+      statsElement.addEventListener('click', function () {
+        applyGlitchEffect(statsElement, 1000, 15);
+      });
+
+      outputElement.addEventListener('click', function () {
+        applyGlitchEffect(outputElement, 1000, 15);
+      });
+
+      lastCommandElement.addEventListener('click', function () {
+        applyGlitchEffect(lastCommandElement, 1000, 15);
+      });
+
+      game.addEventListener("click", function (event) {
+        var rect = this.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        var border = window.getComputedStyle(this, null).getPropertyValue('border-width');
+
+        if (x <= parseInt(border) || y <= parseInt(border) || x >= (this.offsetWidth - parseInt(border)) || y >= (this.offsetHeight - parseInt(border))) {
+          applyGlitchEffect(game, 1000, 15);
+        } else {
+        }
+      });
+
+      terminal.addEventListener('click', function () {
+        applyGlitchEffect(terminal, 1000, 15);
+      });
+
+      line.addEventListener('click', function () {
+        applyGlitchEffect(line, 1000, 15);
+      });
+
+      last.addEventListener('click', function () {
+        applyGlitchEffect(last, 1000, 15);
+      });
+
+    });
+  </script>
+</body>
+
+</html>

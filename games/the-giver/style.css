@@ -1,0 +1,150 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    background-color: #282c35;
+    color: #ffffff;
+    font-family: monospace, monospace;
+  }
+  
+  code {
+    font-family: monospace, monospace;
+  }
+  
+  .game-container {
+    border: 2px solid #ffffff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+  }
+  
+  .game-info {
+    margin-bottom: 50px;
+  }
+  
+  input[type="text"] {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #282c35;
+    color: #fff;
+    width: 475px;
+    border: none transparent;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #fff;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  #map {
+    float: right;
+    margin: 20px;
+  }
+  
+  table {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+  }
+  
+  table td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .last_command_holder {
+    opacity: 25%;
+    display: inline-block;
+    clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0% 100%);
+  }
+  
+  .output {
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  .output::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .output {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes shake {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    10% {
+      transform: translate(-10px, 0);
+    }
+  
+    20% {
+      transform: translate(10px, 0);
+    }
+  
+    30% {
+      transform: translate(-10px, 0);
+    }
+  
+    40% {
+      transform: translate(10px, 0);
+    }
+  
+    50% {
+      transform: translate(-10px, 0);
+    }
+  
+    60% {
+      transform: translate(10px, 0);
+    }
+  
+    70% {
+      transform: translate(-10px, 0);
+    }
+  
+    80% {
+      transform: translate(10px, 0);
+    }
+  
+    90% {
+      transform: translate(-10px, 0);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
