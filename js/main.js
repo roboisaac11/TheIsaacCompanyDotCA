@@ -86,10 +86,23 @@ function easeOutQuad(t) {
 	return t * (2 - t);
 }
 
+// window.addEventListener("load", () => {
+// 	let space_needed = window.innerHeight * logo_speed - 600 //-600 because it seems to be going a little long
+// 	content.style.marginTop = `${space_needed}px`;
+// })
+
 window.addEventListener("load", () => {
-	let space_needed = window.innerHeight * logo_speed - 600 //-600 because it seems to be going a little long
-	content.style.marginTop = `${space_needed}px`;
-})
+	const logoRect = document.querySelector(".container").getBoundingClientRect();
+	const logoBottom = logoRect.top + logoRect.height;
+
+	const contentRect = content.getBoundingClientRect();
+	const contentTop = contentRect.top;
+
+	// Calculate how much vertical space is between bottom of logo and top of content
+	const spaceNeeded = window.innerHeight * logo_speed - (contentTop - logoBottom);
+
+	content.style.marginTop = `${spaceNeeded}px`;
+});
 
 window.addEventListener("scroll", () => {
 	const scrollPos = window.scrollY;

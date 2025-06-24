@@ -6,10 +6,8 @@
 }
 
 body {
-	/* Simulate a long page */
+
 	background-color: #121212;
-	/* background: linear-gradient(to right, rgba(12,12,12, 0.7) 0 100%), url('../assets/images/background.jpg') no-repeat center center fixed; */
-	/* background: #121212 url('../assets/images/background.jpg') no-repeat center center fixed; */
 	background-size: cover;
 	font-family: Arial, sans-serif;
 	color: white;
@@ -221,5 +219,85 @@ body {
 		clip-path: inset(0 0 0 0);
 		/* Fully visible */
 		filter: brightness(1) drop-shadow(0 0 0 rgba(0, 255, 255, 0));
+	}
+}
+
+/* ===== Mobile Responsiveness (Updated) ===== */
+@media (max-width: 768px) {
+	.container {
+		padding: 20px;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center; /* <-- This fixes vertical centering */
+		align-items: center;
+		text-align: center;
+	}
+
+	.logo {
+		width: 150px;
+		height: auto;
+		margin-bottom: 20px;
+	}
+
+	.title {
+		font-size: 20px;
+		margin-top: 10px;
+		padding: 0 10px;
+	}
+
+	.content {
+		font-size: 16px;
+		padding: 100px 15px 15px 15px;
+		height: auto;
+		min-height: 100vh; /* Prevents content from being too short */
+		overflow-y: auto;
+		top: unset;
+		position: relative;
+		transform: none !important;
+		scroll-margin-top: 0px; /* Helps if JS uses scrollIntoView */
+	}
+
+	.content.active {
+		box-shadow: none;
+		padding-top: 100px;
+	}
+
+	.graph-paper {
+		height: 400px;
+		background-size: 40px 40px;
+	}
+
+	#glow1,
+	#glow2 {
+		width: 180px;
+		height: 180px;
+		transform: translate(-50%, -50%) scale(1.2);
+	}
+
+	#glow2 {
+		width: 250px;
+		height: 250px;
+	}
+
+	.slide::after {
+		height: 0.08em;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4 {
+		word-break: break-word;
+	}
+
+	html,
+	body {
+		-webkit-overflow-scrolling: touch;
 	}
 }

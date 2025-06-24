@@ -174,3 +174,64 @@
     transition: width 0.1s linear;
   }
   
+
+
+@media (max-width: 768px) {
+  .music-section {
+    padding: 20px;
+  }
+
+  .section-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-heading p {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .song-title {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .song-artist {
+    font-size: 0.85rem;
+    position: static;
+    transform: none;
+    text-align: left;
+    margin-top: 5px;
+    opacity: 0.7;
+  }
+
+  .song-time {
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  #magic-footer {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 15px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #play-pause {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  #progress-container {
+    width: 100%;
+  }
+}
