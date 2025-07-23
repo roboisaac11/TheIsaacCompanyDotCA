@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Verify Stamp</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="nav-buttons">
+      <a href="index.html" class="btn">Back</a>
+    </div>
+    <h1 class="page-title">Verify a Stamp</h1>
+    <input type="text" id="uuidInput" placeholder="Enter item ID" class="search">
+    <button onclick="verifyUUID()" class="btn">Check</button>
+    <p id="result"></p>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    function verifyUUID() {
+      const uuid = document.getElementById('uuidInput').value.trim();
+      const item = stampData.find(i => i.uuid === uuid);
+      document.getElementById('result').innerHTML = item ?
+        `✅ <a href="view.html?id=${item.uuid}">${item.name}</a>` :
+        '❌ Invalid item ID. This has not been approved by Isaac. Prepare to be hunted.';
+    }
+  </script>
+</body>
+</html>

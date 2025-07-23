@@ -1,0 +1,125 @@
+/* === Global === */
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #0d0d0d;
+	color: #e0e0e0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	align-items: center;
+	place-items: center;
+	line-height: 30px;
+}
+
+a {
+	color: #00ffe1;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3 {
+	color: #00ffe1;
+	text-shadow: 0 0 5px #00ffe1aa;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	align-items: center;
+}
+
+/* === Card Grid === */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.card {
+	background-color: #1a1a1a;
+	border: 1px solid #2e2e2e;
+	border-radius: 12px;
+	padding: 1.25rem;
+	box-shadow: 0 0 10px #00ffe155;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 0 15px #00ffe188;
+}
+
+.card .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.card .icon svg {
+	width: 48px;
+	height: 48px;
+	color: #00ffe1;
+}
+
+/* === Buttons === */
+button, .btn {
+	background-color: #1a1a1a;
+	color: #0ff;
+	padding: 0.6rem 1.2rem;
+	border: 1px solid #0ff;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0 0 8px #00ffe188;
+	transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .btn:hover {
+	background-color: #0ff;
+	color: #000;
+	box-shadow: 0 0 12px #00ffe1cc;
+}
+
+/* === Inputs === */
+input, textarea {
+	width: 100%;
+	padding: 0.8rem;
+	margin: 1rem 0;
+	background-color: #121212;
+	color: #fff;
+	border: 1px solid #333;
+	border-radius: 6px;
+}
+
+input:focus, textarea:focus {
+	border-color: #00ffe1;
+	outline: none;
+	box-shadow: 0 0 8px #00ffe1aa;
+}
+
+.nav-buttons{
+	width: 100%;
+	margin-bottom: 80px;
+}
+
+.nav-buttons :nth-child(1){
+	float: left;
+}
+.nav-buttons :nth-child(2){
+	float: right;
+}
+
+/* === Verify Page === */
+.verify-result {
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: #222;
+	border-left: 4px solid #00ffe1;
+}

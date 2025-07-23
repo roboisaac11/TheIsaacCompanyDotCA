@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>View Approved Item</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="nav-buttons">
+      <a href="index.html" class="btn">Back</a>
+    </div>
+    <div id="output"></div>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const item = stampData.find(i => i.uuid === params.get('id'));
+
+    document.getElementById('output').innerHTML = item ? `
+      <h1>${item.name}</h1>
+      <p><strong>Item ID:</strong> ${item.uuid}</p>
+      <p>${item.summary}</p>
+      <p><strong>Date Approved:</strong> ${item.date}</p>
+      <p><a href="${item.link}" class="btn">Visit Link</a></p>
+    ` : '<p>❌ No item found with that ID.</p>';
+  </script>
+</body>
+</html>

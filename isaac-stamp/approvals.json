@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a1b2c3d4e",
+    "name": "Refurbished Donuts",
+    "description": "Donuts that rise again. Literally.",
+    "link": "https://refurbisheddonuts.biz",
+    "approvedAt": "2025-07-22T21:42:00Z"
+  },
+  {
+    "id": "z9x8y7w6v",
+    "name": "The E-Bomb Saga",
+    "description": "Historical chaos of the 'eeeeee' era.",
+    "approvedAt": "2025-07-22T21:43:00Z"
+  }
+]
