@@ -245,6 +245,7 @@
 				</label>
 			</div>
 			<h2 style="margin-top: 30px;" id="total">0</h2>
+			<h3 style="margin-top: 10px;" id="personal-clicks">You've clicked: 0 times</h3>
 			
 				
 		</section>
@@ -257,14 +258,25 @@
 	<script src="js/footer.js"></script>
 
 	<script>
+		// FOR ADMIN CODE SEE SECRET GIST LOL IF UR A HACKER YOU CANT GET IT CUZ ITS PRIVATE MUHAHAHA
+		// I mean if u had access to my account then maybe but pls dont just cuz its a pain for everyone
 		function update_count() {
-			fetch('https://abacus.jasoncameron.dev/hit/theisaaccompany/bigbuttonclicks');
+			fetch('https://abacus.jasoncameron.dev/hit/theisaaccompany/button');
 		}
+
+		// Initialize personal click counter from localStorage
+		let personalClicks = parseInt(localStorage.getItem('buttonClicks')) || 0;
+		document.getElementById('personal-clicks').innerText = `You've clicked: ${personalClicks} times`;
 
 		const checkbox = document.getElementById('bigButton');
 
 		checkbox.addEventListener('click', function () {
 			update_count();
+			// Increment personal clicks and update localStorage
+			personalClicks++;
+			localStorage.setItem('buttonClicks', personalClicks);
+			document.getElementById('personal-clicks').innerText = `You've clicked: ${personalClicks} times`;
+			
 			checkbox.disabled = true;  // Disable immediately
 			setTimeout(() => {
 				checkbox.disabled = false;  // Re-enable after 0.5 seconds
@@ -273,7 +285,7 @@
 
 
 		// Setup SSE listener
-		const eventSource = new EventSource("https://abacus.jasoncameron.dev/stream/theisaaccompany/bigbuttonclicks");
+		const eventSource = new EventSource("https://abacus.jasoncameron.dev/stream/theisaaccompany/button");
 
 		eventSource.onmessage = function (event) {
 			const data = JSON.parse(event.data);
@@ -287,7 +299,7 @@
 		};
 
 		eventSource.onerror = function (err) {
-			console.error("SSE connection error:", err);
+			console.error("SSE connection error			:", err);
 		};
 
 	</script>
